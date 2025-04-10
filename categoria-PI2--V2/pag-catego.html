@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD de Categorias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <div class="header">
+        <h2>Consulta Categorias</h2>  
+    </div>
+
+
+    <div class="container">
+
+      
+        <h2 class="filtro">🔍 Aplicar Filtro</h2>
+
+        <!-- Filtro -->
+        <input type="text" id="filtroCategoria" placeholder="Filtrar por nome da categoria..." />
+
+        <!-- Tabela de categorias -->
+        <table id="tabelaCategorias">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Categoria</th>
+                    <th>Descrição</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Exemplo estático (depois será preenchido com PHP + banco) -->
+                <tr>
+                    <td>1</td>
+                    <td>Camisetas</td>
+                    <td>Camisetas básicas e estampadas</td>
+                    <td>
+                        <button type="submit" name="" onclick="" style="cursor: pointer;">Editar</button>
+                        <button class="remover" type="submit" name="" onclick=""
+                            style="cursor: pointer;">Remover</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Calças</td>
+                    <td>Modelos jeans, sarja e alfaiataria</td>
+                    <td>
+                        <button type="submit" name="" onclick="" style="cursor: pointer;">Editar</button>
+                        <button class="remover" type="submit" name="" onclick=""
+                            style="cursor: pointer;">Remover</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Jaquetas</td>
+                    <td>Couro, jeans e casacos</td>
+                    <td>
+                        <button type="submit" name="" onclick="" style="cursor: pointer;">Editar</button>
+                        <button class="remover" type="submit" name="" onclick=""
+                            style="cursor: pointer;">Remover</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        //Script do filtro//
+        // Filtro em tempo real pelo nome da categoria (2ª coluna)
+        document.getElementById('filtroCategoria').addEventListener('input', function () {
+            const filtro = this.value.toLowerCase();
+            const linhas = document.querySelectorAll('#tabelaCategorias tbody tr');
+
+            linhas.forEach(function (linha) {
+                const categoria = linha.cells[1].textContent.toLowerCase();
+                linha.style.display = categoria.includes(filtro) ? '' : 'none';
+            });
+        });
+    </script>
+
+</body>
+
+</html>
