@@ -1,25 +1,29 @@
-# CakePHP 3
+# Composer
+/vendor/
 
-/vendor/*
-/config/app.php
+# Logs
+*.log
 
-/tmp/cache/models/*
-!/tmp/cache/models/empty
-/tmp/cache/persistent/*
-!/tmp/cache/persistent/empty
-/tmp/cache/views/*
-!/tmp/cache/views/empty
-/tmp/sessions/*
-!/tmp/sessions/empty
-/tmp/tests/*
-!/tmp/tests/empty
+# Env
+.env
+.env.*
 
-/logs/*
-!/logs/empty
+# Sistema operacional
+.DS_Store
+Thumbs.db
 
-# CakePHP 2
+# IDEs e editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
 
-/app/tmp/*
-/app/Config/core.php
-/app/Config/database.php
-/vendors/*
+# Arquivos temporários
+*.bak
+*.tmp
+*.swp
+
+# Banco de dados local (opcional)
+*.sql
+*.sqlite
+
