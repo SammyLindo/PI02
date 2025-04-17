@@ -1,4 +1,4 @@
-# E-commerce Loja de Grife
+# E-commerce Sénate Couture
 
 Projeto de site de e-commerce desenvolvido em PHP para uma loja de grife.
 
