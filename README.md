@@ -18,7 +18,7 @@ Projeto de site de e-commerce desenvolvido em PHP para uma loja de grife.
 ## Como rodar
 
 1. Clone o projeto
-2. Configure o banco de dados em `src/config/db.php`
+2. Configure o banco de dados em `src/config/db.php` //isso aqui ainda nn é real
 3. Rode localmente com Apache ou PHP embutido
 
 ## Licença
