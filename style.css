@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body{
+    background: #fff;
+    color: #111;
+}
+
+header{
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.menu ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.menu .logo{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.menu a{
+    text-decoration: none;
+    color: #111;
+    font-size: 0.95rem;
+}
+
+
+.banner h1{
+    font-size: 2.5rem;
+    padding: 7px
+}
+
+.banner{
+    padding: 30px;
+}
+
+
+.banner-content{
+    text-align: center;
+    color: #111;
+    padding: 30px;
+}
+
+.categorias{
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.categorias h2{
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.grid{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card{
+    width: 500px;
+}
+
+.card img{
+    width: 100%;
+    border-radius: 3px;
+}
+
+footer{
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+    margin-top: 40px;
+}
+
+
