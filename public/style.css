@@ -68,11 +68,14 @@ header{
 
 .card{
     width: 500px;
+    
+    
 }
 
 .card img{
     width: 100%;
     border-radius: 3px;
+    
 }
 
 footer{

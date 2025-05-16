@@ -1,0 +1,85 @@
+/* #f5f5f5 - #757575 - #a1ac88 */ 
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link{
+    padding: 25px;
+}
+
+
+
+
+.container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 50rem;
+}
+h2 {
+    text-align: center;
+    color: #757575;
+}
+input, select, button {
+    width: 100%;
+    padding: 0.625rem;
+    margin: 5px 0;
+    border: 1px solid #757575;
+    border-radius: 5px;
+}
+#itemNome, #quantidadeProduto, #imagemProduto, #novaCategoriaInput, #outraCor, #outroTamanho {
+    max-width: 779px;
+}
+button {
+    background-color: #a1ac88;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #757575;
+}
+table {
+    width: 100%;
+    margin-top: 20px;
+    text-transform: uppercase;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #757575;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #a1ac88;
+    color: white;
+}
+.remove-btn {
+    background: #757575;
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.remove-btn {
+    background: #757575;
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+img {
+    max-width: 50px;
+    max-height: 50px;
+}
