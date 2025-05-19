@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel do Administrador</title>
-    <link rel="stylesheet" href="/public/adicionarProdutosAdm.css">
+    <link rel="stylesheet" href="../assets/css/adicionarProduto.css">
 </head>
 <body>
     
     <div class="link">
-        <a href="/public/acesso.html">Voltar para Acessos</a>
+        <a href="../pag_acessos/acesso.html">Voltar para Acessos</a>
     </div>
     <div class="container">
         <h2>Gerenciar Loja</h2>
@@ -70,6 +70,6 @@
         </table>
     </div> 
 
-    <script src="/public/adcProdutos.js"></script>
+    <script src="/public/adcProdutos/adcProdutos.js"></script>
 </body>
 </html>
