@@ -1,12 +1,19 @@
 <?php
-require_once 'conexao.php';
+require_once '../conexao/conexao.php';
 
-// Busca os dados do banco de dados
 try {
-    $query = $conexao->query("SELECT id, nome FROM categorias");
+    $query = $conexao->query("
+        SELECT 
+            c.ID_Categorias as id, 
+            c.Nome as nome,
+            COUNT(p.ID_Produtos) as quantidade
+        FROM Categorias c
+        LEFT JOIN Produtos p ON p.ID_Categorias = c.ID_Categorias
+        GROUP BY c.ID_Categorias, c.Nome
+    ");
     $categorias = $query->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    die("Erro ao buscar categorias: " . $e->getMessage());
+    die('Erro ao buscar categorias: ' . $e->getMessage());
 }
 ?>
 
@@ -18,7 +25,7 @@ try {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Painel de Categorias</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../assets/css/styleCategoria.css">
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -34,6 +41,7 @@ try {
         <thead>
           <tr>
             <th>Nome da Categoria</th>
+            <th>Quantidade</th>
             <th class="acao">Editar</th>
             <th class="acao">Excluir</th>
           </tr>
@@ -42,6 +50,7 @@ try {
           <?php foreach ($categorias as $categoria): ?>
             <tr>
               <td><?= htmlspecialchars($categoria['nome']) ?></td>
+              <td><?= $categoria['quantidade'] ?></td>
               <td class="acao">
                 <button type="button" onclick="editItem(<?= $categoria['id'] ?>, '<?= htmlspecialchars($categoria['nome']) ?>')">
                   <i class='bx bx-edit'></i>

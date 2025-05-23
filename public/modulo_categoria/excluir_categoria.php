@@ -1,15 +1,13 @@
 <?php
-require_once 'conexao.php';
+require_once '../conexao/conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];
 
     try {
-        $stmt = $conexao->prepare("DELETE FROM categorias WHERE id = ?");
+        $stmt = $conexao->prepare("DELETE FROM Categorias WHERE ID_Categorias = ?");
         $stmt->execute([$id]);
-
-        // Redireciona para a página inicial após excluir
-        header("Location: index.php");
+        header("Location: categoria.php");
         exit;
     } catch (PDOException $e) {
         die("Erro ao excluir categoria: " . $e->getMessage());

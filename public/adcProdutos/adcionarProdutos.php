@@ -1,3 +1,13 @@
+<?php
+require_once '../conexao/conexao.php';
+
+try {
+    $query = $conexao->query("SELECT ID_Categorias as id, Nome as nome FROM Categorias");
+    $categorias = $query->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die("Erro ao buscar categorias: " . $e->getMessage());
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -17,11 +27,11 @@
         <!-- Seletor de Categoria -->
         <label for="categoriaSelect">Categoria:</label>
         <select id="categoriaSelect" onchange="mostrarCampoCategoriaPersonalizada()">
-            <option value="Calça">Calça</option>
-            <option value="Camisa">Camisa</option>
-            <option value="Camiseta">Camiseta</option>
-            <option value="Boné">Boné</option>
-            <option value="Sapato">Sapato</option>
+            <?php foreach ($categorias as $categoria): ?>
+                <option value="<?= htmlspecialchars($categoria['nome']) ?>">
+                    <?= htmlspecialchars($categoria['nome']) ?>
+                </option>
+            <?php endforeach; ?>
             <option value="Outros">Outros</option>
         </select>
 
@@ -71,5 +81,28 @@
     </div> 
 
     <script src="/public/adcProdutos/adcProdutos.js"></script>
+    <script>
+        function mostrarCampoCategoriaPersonalizada() {
+            const select = document.getElementById('categoriaSelect');
+            const input = document.getElementById('novaCategoriaInput');
+            if (select.value === 'Outros') {
+                input.style.display = 'block';
+            } else {
+                input.style.display = 'none';
+            }
+        }
+        function mostrarCampoOutro(tipo) {
+            if (tipo === 'tamanho') {
+                const select = document.getElementById('tamanho');
+                const input = document.getElementById('outroTamanho');
+                input.style.display = select.value === 'outro' ? 'block' : 'none';
+            }
+            if (tipo === 'cor') {
+                const select = document.getElementById('cor');
+                const input = document.getElementById('outraCor');
+                input.style.display = select.value === 'outro' ? 'block' : 'none';
+            }
+        }
+    </script>
 </body>
 </html>

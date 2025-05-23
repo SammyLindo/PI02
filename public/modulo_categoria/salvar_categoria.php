@@ -1,5 +1,5 @@
 <?php
-require_once 'conexao.php';
+require_once '../conexao/conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];
@@ -7,14 +7,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         if (!empty($id)) {
-            $stmt = $conexao->prepare("UPDATE categorias SET nome = ? WHERE id = ?");
+            // Atualizar categoria existente
+            $stmt = $conexao->prepare("UPDATE Categorias SET Nome = ? WHERE ID_Categorias = ?");
             $stmt->execute([$nome, $id]);
         } else {
-            $stmt = $conexao->prepare("INSERT INTO categorias (nome) VALUES (?)");
+            // Inserir nova categoria
+            $stmt = $conexao->prepare("INSERT INTO Categorias (Nome) VALUES (?)");
             $stmt->execute([$nome]);
         }
 
-        header("Location: index.php");
+        header("Location: categoria.php");
         exit;
     } catch (PDOException $e) {
         die("Erro ao salvar categoria: " . $e->getMessage());
