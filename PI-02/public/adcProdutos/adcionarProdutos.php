@@ -86,7 +86,6 @@ try {
             const tamanho = document.getElementById('tamanho').value;
             const cor = document.getElementById('cor').value;
             const qtd = document.getElementById('quantidadeProduto').value;
-            // Imagem não será enviada
 
             if (!nome || !preco || !categoria || !tamanho || !cor || !qtd) {
                 alert('Preencha todos os campos!');
