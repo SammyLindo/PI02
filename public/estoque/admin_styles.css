@@ -1,0 +1,555 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* ==============================================
+   RESET E ESTILOS BASE
+   ============================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f5f5f5;
+  color: #343a40;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ==============================================
+   LAYOUT PRINCIPAL
+   ============================================== */
+.admin-wrapper {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+}
+
+/* ==============================================
+   SIDEBAR MODERNA
+   ============================================== */
+.sidebar {
+  background-color: #ffffff;
+  border-right: 1px solid #dee2e6;
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  padding: 0 1.5rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #343a40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.sidebar-header .icon {
+  color: #6c757d;
+  font-size: 1.5rem;
+}
+
+.sidebar-nav {
+  padding: 0 1rem;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  color: #6c757d;
+  text-decoration: none;
+  border-radius: 6px;
+  font-family: 'Arial' sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.sidebar-nav a:hover {
+  background-color: #495057;
+  color: #ffffff;
+}
+
+.sidebar-nav a.active {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+.sidebar-nav hr {
+  border: none;
+  height: 1px;
+  background-color: #dee2e6;
+  margin: 1.5rem 0;
+}
+
+.back-link {
+  color: #6c757d !important;
+  font-size: 0.875rem !important;
+}
+
+.back-link:hover {
+  background-color: #f8f9fa !important;
+  color: #495057 !important;
+}
+
+/* ==============================================
+   CONTEÚDO PRINCIPAL
+   ============================================== */
+.main-content {
+  padding: 2rem;
+}
+
+.main-header {
+  margin-bottom: 2rem;
+}
+
+.main-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #343a40;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.main-header .icon {
+  color: #6c757d;
+  font-size: 2rem;
+}
+
+/* ==============================================
+   ALERTAS
+   ============================================== */
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+.alert-danger {
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+.alert .icon {
+  font-size: 1.25rem;
+}
+
+/* ==============================================
+   CARD DE CONTEÚDO
+   ============================================== */
+.content-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dee2e6;
+  margin-bottom: 2rem;
+}
+
+.table-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #343a40;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.table-title .icon {
+  color: #6c757d;
+  font-size: 1.25rem;
+}
+
+/* ==============================================
+   TABELA MODERNA
+   ============================================== */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th {
+  background-color: #f8f9fa;
+  color: #495057;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.data-table td {
+  padding: 0.75rem 1rem;
+  color: #6c757d;
+  border-bottom: 1px solid #dee2e6;
+  transition: background-color 0.2s ease;
+}
+
+.data-table tbody tr:hover td {
+  background-color: #f8f9fa;
+}
+
+/* ==============================================
+   BOTÕES DE AÇÃO
+   ============================================== */
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.actions form {
+  margin: 0;
+}
+
+.btn-editar,
+.btn-excluir {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-editar {
+  background-color: #6c757d;
+  border: 1px solid #6c757d;
+}
+
+.btn-editar:hover {
+  background-color: #5a6268;
+  border-color: #5a6268;
+}
+
+.btn-excluir {
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+}
+
+.btn-excluir:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+/* ==============================================
+   MODAL
+   ============================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.visible .modal-content {
+  transform: scale(1) translateY(0);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modal-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #343a40;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.modal-header .icon {
+  color: #6c757d;
+  font-size: 1.25rem;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #6c757d;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.modal-close-btn:hover {
+  background-color: #f8f9fa;
+  color: #495057;
+}
+
+/* ==============================================
+   FORMULÁRIO
+   ============================================== */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #495057;
+  font-size: 0.875rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #495057;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #343a40;
+  box-shadow: 0 0 0 3px rgba(52, 58, 64, 0.2);
+}
+
+.form-group input:disabled {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+.form-actions {
+  text-align: right;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.form-actions button {
+  padding: 0.75rem 1.5rem;
+  background-color: #343a40;
+  color: #ffffff;
+  border: 1px solid #343a40;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.form-actions button:hover {
+  background-color: #23272b;
+  border-color: #1d2124;
+}
+
+/* ==============================================
+   ESTADO VAZIO
+   ============================================== */
+.no-data {
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+  padding: 3rem;
+  font-size: 1.1rem;
+}
+
+.no-data .icon {
+  color: #dee2e6;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* ==============================================
+   RESPONSIVIDADE
+   ============================================== */
+@media (max-width: 1024px) {
+  .admin-wrapper {
+    grid-template-columns: 240px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    height: auto;
+    padding: 1rem 0;
+    border-right: none;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .sidebar-header {
+    padding: 0 1rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+
+  .sidebar-nav a {
+    white-space: nowrap;
+    margin-bottom: 0;
+    min-width: fit-content;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .main-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .content-card {
+    padding: 1rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .btn-editar,
+  .btn-excluir {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .modal-content {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* ==============================================
+   ANIMAÇÕES
+   ============================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.data-table tbody tr {
+  animation: fadeInUp 0.4s ease-out;
+  animation-fill-mode: both;
+}
+
+/* Delays escalonados para as linhas da tabela */
+.data-table tbody tr:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.data-table tbody tr:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.data-table tbody tr:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.data-table tbody tr:nth-child(4) {
+  animation-delay: 0.25s;
+}
+.data-table tbody tr:nth-child(5) {
+  animation-delay: 0.3s;
+}

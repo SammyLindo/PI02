@@ -1,0 +1,241 @@
+/* assets/css/painel_mono_estilo.css */
+
+:root {
+    --bg-color: #f4f4f8;
+    --card-bg-color: #ffffff;
+    --primary-text-color: #212529; /* Preto suave */
+    --secondary-text-color: #6c757d; /* Cinza médio */
+    --border-color: #dee2e6; /* Cinza claro */
+    --shadow-color: rgba(0, 0, 0, 0.07);
+
+    --btn-primary-bg: #343a40; /* Preto/Cinza escuro */
+    --btn-primary-hover-bg: #495057;
+    --btn-primary-text: #ffffff;
+
+    --btn-secondary-bg: #f8f9fa; /* Cinza muito claro */
+    --btn-secondary-hover-bg: #e2e6ea;
+    --btn-secondary-text: #343a40;
+    --btn-secondary-border: #ced4da;
+
+    --btn-danger-bg: #dc3545;
+    --btn-danger-hover-bg: #c82333;
+    --btn-danger-text: #ffffff;
+    
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--primary-text-color);
+}
+
+.content-card {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border: 1px solid var(--border-color);
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+thead th {
+    font-weight: 600;
+    color: var(--secondary-text-color);
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--secondary-text-color);
+    padding: 40px;
+    font-style: italic;
+}
+
+.footer-link {
+    text-align: center;
+    margin-top: 30px;
+}
+.footer-link a {
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+.footer-link a:hover {
+    color: var(--primary-text-color);
+    text-decoration: underline;
+}
+
+/* --- Ações e Botões --- */
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+.acao-header {
+    text-align: right;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+}
+.btn-primary:hover {
+    background-color: var(--btn-primary-hover-bg);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    border: 1px solid var(--btn-secondary-border);
+}
+.btn-secondary:hover {
+    background-color: var(--btn-secondary-hover-bg);
+}
+
+.btn-danger {
+    background-color: var(--btn-danger-bg);
+    color: var(--btn-danger-text);
+}
+.btn-danger:hover {
+    background-color: var(--btn-danger-hover-bg);
+}
+
+.actions .btn {
+    padding: 8px 12px; /* Botões menores na tabela */
+}
+.actions form {
+    margin: 0;
+}
+
+/* --- Alertas --- */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+}
+.alert-success { background-color: #28a745; }
+.alert-danger { background-color: #dc3545; }
+
+/* --- Modal --- */
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Inicia escondido */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: var(--card-bg-color);
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.modal h2 {
+    margin: 0 0 25px 0;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--secondary-text-color);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+.form-group input:focus {
+    outline: none;
+    border-color: var(--btn-primary-bg);
+    box-shadow: 0 0 0 3px rgba(52, 58, 64, 0.2);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}

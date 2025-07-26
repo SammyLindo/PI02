@@ -1,0 +1,190 @@
+/* assets/css/painel_usuario_estilo_modificado.css */
+
+/* Importa a base de estilos para garantir consistência de variáveis (cores, fontes, etc.) */
+@import url('painel_mono_estilo.css');
+
+/* Remove o layout antigo que centralizava o formulário na tela */
+body, html {
+    height: auto;
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--bg-color, #f8f9fa); /* Cor de fundo de fallback */
+}
+
+/* Estrutura principal do painel, igual ao painel de produtos */
+.main-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Card de conteúdo para envolver o formulário, igual ao painel de produtos */
+.content-card {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color, #dee2e6);
+    margin-bottom: 30px;
+}
+
+/* Grid para organizar os campos do formulário, igual ao painel de produtos */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px; /* Adicionado espaço antes dos botões de ação */
+}
+
+/* Estilos para um grupo de formulário individual */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ocupa a linha inteira no grid */
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--primary-text-color, #495057);
+}
+
+/* Estilo padrão para inputs */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color, #ced4da);
+    border-radius: 6px;
+    background-color: #fff;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    color: var(--primary-text-color);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--btn-primary-bg, #343a40);
+    box-shadow: 0 0 0 3px rgba(52, 58, 64, 0.2);
+}
+
+/* ========================================= */
+/* --- ESTILIZAÇÃO CUSTOMIZADA DOS SELECTS --- */
+/* ========================================= */
+
+.select-wrapper {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.select-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 1em;
+    height: 1em;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%236c757d' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.select-wrapper select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    padding: 12px 40px 12px 12px;
+    font-size: 1rem;
+    font-family: var(--font-family);
+    color: var(--primary-text-color);
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.select-wrapper:focus-within {
+    border-color: var(--btn-primary-bg);
+    box-shadow: 0 0 0 3px rgba(52, 58, 64, 0.2);
+}
+
+/* Ações do formulário (botões), igual ao painel de produtos */
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+/* Estilos de botões (devem vir de 'painel_mono_estilo.css', mas incluídos aqui por segurança) */
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--btn-primary-bg, #343a40);
+    color: var(--btn-primary-text, #ffffff);
+}
+.btn-primary:hover {
+    background-color: var(--btn-primary-hover-bg, #23272b);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--btn-secondary-bg, #e9ecef);
+    color: var(--btn-secondary-text, #495057);
+    border: 1px solid var(--btn-secondary-border, #ced4da);
+}
+.btn-secondary:hover {
+    background-color: var(--btn-secondary-hover-bg, #dce1e5);
+}
+
+/* Alertas/Notificações, padronizado com o painel de produtos */
+.notification-bar {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.notification-bar.success { background-color: #28a745; }
+.notification-bar.danger { background-color: #dc3545; }
